@@ -1,0 +1,431 @@
+@import "@fortawesome/fontawesome-free/css/fontawesome.min.css";
+@import "@fortawesome/fontawesome-free/css/solid.min.css";
+@import "@fortawesome/fontawesome-free/css/regular.min.css";
+@import "@fortawesome/fontawesome-free/css/brands.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+
+    /* Global Styles */
+
+    body{
+        @apply bg-neutral-50;
+        @apply text-gray-900;
+        @apply transition-all;
+        @apply duration-150;
+        @apply ease-out;
+        @apply mt-20;
+        font-family: 'Roboto Slab', serif;
+    }
+
+
+
+    /* Navbar Styles */
+
+    nav .site-logo, .menu-heading{
+        @apply text-3xl;
+        @apply font-black;
+        font-family: 'Roboto Slab', serif;
+        @apply capitalize;
+        @apply tracking-tighter;
+        @apply my-0;
+        @apply no-underline;
+    }
+
+    nav a{
+        @apply text-gray-900;
+        @apply block;
+        @apply hover:text-gray-900;
+        @apply hover:-translate-y-1;
+        @apply transition-all;
+        @apply duration-150;
+        @apply ease-in;
+        @apply no-underline;
+    }
+    
+    
+
+
+    /* Slide Menu Styles */
+
+    #slideMenu{
+        @apply fixed;
+        @apply top-0;
+        @apply w-2/12;
+        @apply h-screen;
+        @apply border-r-0;
+        @apply border-r-gray-900;
+        @apply bg-sky-100;
+        @apply z-50;
+        @apply transition-all;
+        @apply duration-200;
+        @apply ease-in;
+    }
+
+    #slideMenu>ul{
+        @apply text-xl;
+        @apply text-black;
+        font-family: 'Roboto Slab', serif;
+        @apply tracking-tighter;
+        @apply text-2xl;
+        @apply font-bold;
+    }
+
+    #slideMenu>ul>li{
+        @apply border-b-0;
+        @apply border-yellow-500;
+        @apply hover:border-0;
+        @apply hover:bg-gray-900;
+        @apply hover:text-white;
+        @apply transition-all;
+        @apply duration-150;
+        @apply ease-in;
+    }
+
+    #slideMenu>ul>li a{
+        @apply no-underline;
+        @apply hover:text-white;
+        @apply hover:bg-gray-700;
+        @apply w-full;
+        @apply h-full;
+        @apply block;
+        @apply py-4;
+        @apply px-6;
+        @apply underline-offset-8;
+        @apply hover:underline;
+        @apply hover:underline-offset-4;
+        @apply animate-300-in;
+    }
+
+
+
+    /* Text Heading Styles */
+
+    h1{
+        @apply text-4xl;
+        @apply md:text-5xl;
+        @apply lg:text-[56px];
+        @apply font-bold;
+        @apply leading-10;
+        font-family: 'Poppins', sans-serif;
+        line-height: 1;
+        letter-spacing: -0.0525em;
+        @apply text-center;
+        @apply mt-8;
+        @apply mb-10;
+    }
+
+    h2{
+        @apply text-lg;
+        @apply md:text-xl;;
+        @apply font-light;
+        @apply text-center;
+        @apply mb-12;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    section.latest-content h2{
+        @apply text-3xl;
+        @apply font-bold;
+        @apply text-center;
+        @apply mb-12;
+        @apply tracking-tight;
+        font-family: 'Roboto Slab', serif;
+    }
+
+
+
+    /* Text Link Style */
+
+    a{
+        @apply underline;
+        @apply underline-offset-4;
+    }
+
+    a:hover{
+        @apply no-underline;
+        @apply text-sky-600;
+    }
+
+    a.share-link{
+        @apply border-[0.185rem];
+        @apply border-stone-200;
+        @apply rounded-full;
+        @apply w-11;
+        @apply aspect-square;
+        @apply flex;
+        @apply justify-center;
+        @apply items-center;
+        @apply no-underline;
+        @apply text-xl;
+        @apply text-black;
+    }
+
+
+
+    /* Text Styles */
+
+    .font-roboto{
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .bull-before::before {
+        content: '\00b7';
+        display: inline-block;
+        padding: 0 9px 0 12px;
+    }
+
+    .bull-after::after {
+        content: '\00b7';
+        display: inline-block;
+        padding: 0 12px 0 9px;
+    }
+
+    p.form-error{
+        @apply bg-red-700;
+        @apply text-white;
+        @apply py-0.5;
+        @apply rounded-sm;
+        @apply text-sm;
+        @apply mx-auto;
+        @apply bull-before;
+        @apply bull-after;
+    }
+
+
+
+    /* Button Styles */
+
+    .btn{
+        @apply mx-auto;
+        @apply mb-6;
+        @apply px-8;
+        @apply py-3;
+        @apply inline-block;
+        @apply bg-white;
+        @apply text-gray-900;
+        @apply border;
+        @apply border-gray-600;
+        @apply rounded-sm;
+        @apply text-3xl;
+        @apply text-center;
+        font-family: 'Roboto Slab', serif;
+        @apply font-bold;
+        @apply no-underline;
+        @apply animate-hover-rise;
+        @apply hover:bg-amber-300;
+        @apply hover:text-gray-900;
+        @apply hover:shadow-md;
+              
+    }
+
+    .btn-dark{
+        @apply text-white;
+        @apply bg-gray-900;
+    }
+
+    .btn-light{
+        @apply bg-white;
+        @apply text-gray-900;
+    }
+
+    .btn-green{
+        @apply bg-lime-400;
+        @apply text-gray-900;
+    }
+
+    .btn-red{
+        @apply bg-red-500;
+        @apply hover:bg-red-600;
+        @apply text-white;
+        @apply hover:text-white;
+        @apply border-0;
+    }
+
+    .btn-sm{
+        @apply mb-6;
+        @apply px-3;
+        @apply py-1;
+        @apply text-xl;
+    }
+
+    .btn-xs{
+        @apply mb-1.5;
+        @apply px-2;
+        @apply py-0;
+        @apply text-base;
+    }
+
+
+
+    /* Form Element Styles */
+
+    form{
+        
+    }
+
+    label{
+        @apply block;
+        @apply mb-2;
+    }
+
+    input[type=text],
+    input[type=email],
+    input[type=password],
+    textarea,
+    select{
+        @apply bg-transparent;
+        @apply border-0;
+        @apply border-b-2;
+        @apply border-gray-200;
+        @apply mb-10;
+        @apply p-3;
+        @apply outline-none;
+        @apply focus:ring-0;
+        @apply focus:border-gray-300;
+        @apply focus:shadow-sm;
+        @apply text-gray-600
+    }
+
+    textarea{
+        @apply h-44;
+    }
+
+    input[type=checkbox]{
+        @apply mr-5;
+        @apply w-6;
+        @apply h-6;
+        @apply text-lg;
+        @apply font-medium;
+        @apply !outline-white; 
+        @apply accent-lime-400;
+        @apply text-gray-900;
+        @apply border-gray-400;
+    }
+
+
+
+    /* Layout Component Styles */
+
+    .container{
+        @apply lg:!w-3/4;
+        @apply mx-auto;
+        @apply p-6;
+    }
+
+    .form-card{
+        @apply p-3;
+    }
+
+
+    /* Grid Styles */
+    .grid-lg{
+        @apply grid;
+        @apply grid-cols-1;
+        @apply md:grid-cols-2;
+        @apply lg:grid-cols-3;
+        @apply 2xl:grid-cols-4;
+        @apply gap-6;
+        @apply border-t;
+        @apply p-6;
+    }
+    
+
+
+
+    /* Element styles */
+
+    .thumbnail{
+        @apply w-full;
+        @apply aspect-video;
+        @apply bg-no-repeat;
+        @apply bg-cover;
+        @apply bg-center;
+        @apply border;
+        @apply border-gray-300;
+        @apply shadow-lg;
+        @apply mb-3;
+        @apply animate-hover-rise;
+
+    }
+
+    .empty-thumbnail{
+        @apply bg-gradient-to-tr;
+        @apply from-yellow-400;
+        @apply to-amber-100 h-full;
+        @apply mb-3;
+        @apply animate-hover-rise;
+    }
+
+
+
+    
+    
+    
+
+
+
+    /* Article Styles */
+
+    .article-body{
+        font-family: 'Roboto Slab', serif;
+        @apply text-xl;
+        @apply font-light;
+        @apply mx-5;
+    }
+
+    .article-body h2{
+        font-family: 'Roboto Slab', serif;
+        @apply font-bold;
+        @apply text-3xl;
+        @apply tracking-tight;
+        @apply mb-8;
+        @apply mt-10;
+        @apply pt-10;
+        @apply border-t;
+        @apply text-start;
+    }
+
+    .article-body p{
+        @apply mb-8;
+        @apply text-gray-700;
+        @apply leading-8;
+    }
+
+    .article-body p.first::first-letter {
+        -webkit-initial-letter: 3;
+                initial-letter: 3;
+        color: orange;
+        font-weight: bold;
+        margin-right: .75em;
+    }
+    
+
+
+    /* Animation classes */
+
+    .animate-150-in{
+        @apply transition-all;
+        @apply duration-150;
+        @apply ease-in;
+    }
+
+    .animate-300-in{
+        @apply transition-all;
+        @apply duration-300;
+        @apply ease-in;
+    }
+
+    .animate-hover-rise{
+        @apply animate-150-in;
+        @apply hover:shadow-md;
+        @apply hover:-translate-y-1;
+    }
+  
+
+
+    
+}
