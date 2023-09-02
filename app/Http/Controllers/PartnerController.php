@@ -58,13 +58,13 @@ class PartnerController extends Controller
     }
 
     // Store partner in database
-    public function store(Request $request, Partner $category){
+    public function store(Request $request, Partner $partner){
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required'
         ]);
 
-        $category->create([
+        $partner->create([
             'hex' => Str::random(11),
             'user_id' => auth()->user()->id,
             'first_name' => $request->first_name,

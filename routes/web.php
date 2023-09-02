@@ -157,9 +157,32 @@ Route::controller(PartnerController::class)->middleware('auth')->group(function(
     Route::post('/dashboard/partners/{partner}/images/render', 'renderImage');
 });
 
-// ArticleController (auth and guest)
+// PartnerController (auth and guest)
 
 Route::controller(PartnerController::class)->group(function(){
+    
+});
+
+
+
+// TESTIMONIAL CONTROLLER
+
+// TestimonialController (auth only)
+Route::controller(TestimonialController::class)->middleware('auth')->group(function(){
+    Route::get('/dashboard/testimonials', 'adminIndex');
+    Route::get('/dashboard/testimonials/create', 'create');
+    Route::post('/dashboard/testimonials/store', 'store');
+    Route::get('/dashboard/testimonials/{testimonial}/edit', 'edit');
+    Route::post('/dashboard/testimonials/{testimonial}/update', 'update');
+    Route::get('/dashboard/testimonials/{testimonial}/images/upload', 'selectImage');
+    Route::post('/dashboard/testimonials/{testimonial}/images/upload', 'uploadImage');
+    Route::get('/dashboard/testimonials/{testimonial}/images/crop', 'cropImage');
+    Route::post('/dashboard/testimonials/{testimonial}/images/render', 'renderImage');
+});
+
+// TestimonialController (auth and guest)
+
+Route::controller(TestimonialController::class)->group(function(){
     
 });
 
