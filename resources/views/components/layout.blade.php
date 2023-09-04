@@ -62,6 +62,8 @@
         {{$slot}}     
 
     </div>
+
+    <x-footer />
     
     {{-- Toast messages --}}
     <x-toast-message />

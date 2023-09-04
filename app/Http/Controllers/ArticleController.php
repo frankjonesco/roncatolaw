@@ -94,7 +94,7 @@ class ArticleController extends Controller
     public function edit(Article $article){
         return view('articles/edit', [
             'article' => $article,
-            'criminal_cases' => Category::orderBy('title', 'ASC')->get(),
+            'categories' => Category::orderBy('title', 'ASC')->get(),
             'topics' => Topic::orderBy('title', 'ASC')->get(),
         ]);
     }
@@ -103,12 +103,10 @@ class ArticleController extends Controller
     public function update(Article $article, Request $request){
         $form_data = $request->validate([
             'title' => 'required',
-            'criminal_case_id' => 'required',
-            'topic_id' => 'required'
         ]);
 
-        $article->criminal_case_id = $request->criminal_case_id;
-        $article->topic_id = $request->topic_id;
+        $article->category_id = $request->category;
+        $article->topic_id = $request->topic;
         $article->title = $request->title;
         $article->caption = $request->caption;
         $article->body = $request->body;

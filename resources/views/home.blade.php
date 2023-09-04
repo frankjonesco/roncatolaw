@@ -48,5 +48,32 @@
             </div>
         </div>
     </section>
+
+
+
+    <section id="testimonials" class="bg-gradient-to-tr">
+        <div class="container">
+            <h1 class="">What people say about us</h1>
+            <div class="grid grid-cols-3 gap-16 mb-12">
+                @foreach ($testimonials as $testimonial)
+                    <div class="flex flex-col items-center">
+                        <img src="{{asset('images/testimonials/'.$testimonial->hex.'/'.$testimonial->image)}}" alt="" class="rounded-full w-1/2 mx-auto border-2 border-green-500 p-0.5">
+                        <p>{{$testimonial->full_name()}}</p>
+                        <p>{{$testimonial->job_title}}</p>
+                        <p>{{$testimonial->company_name}}</p>
+                        <span>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                            <i class="fas fa-star text-yellow-500"></i>
+                        </span>
+                        <p class="text-center">{{$testimonial->testimonial}}</p>
+                    </div>
+                   
+                @endforeach
+            </div>
+        </div>
+    </section>
     
 </x-layout>

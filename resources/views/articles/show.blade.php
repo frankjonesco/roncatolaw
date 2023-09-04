@@ -4,18 +4,18 @@
             <ul class="flex flex-col sm:flex-row gap-0 sm:gap-2 items-center w-min whitespace-nowrap mx-auto font-roboto">
                 <li class="hidden sm:block">
                     <a href="/" class="no-underline tracking-tight">
-                        True Crime Metrix
+                        News
                     </a>
                 </li>
-                @if($article->criminal_case)
+                @if($article->category)
                     <li class="hidden sm:block">></li>
                     <li class="font-bold">
                         <a href="#" class="no-underline tracking-tight">
-                            {{$article->criminal_case->title}}
+                            {{$article->category->title}}
                         </a>
                     </li>
                 @endif
-                @if($article->criminal_case)
+                @if($article->topic)
                     <li class="hidden sm:block">></li>
                     <li class="font-bold">
                         <a href="#" class="no-underline tracking-tight text-sky-600">
@@ -108,12 +108,12 @@
                 </div>
 
                 <div class="flex flex-col gap-4 justify-center items-center border-b border-gray-200 pb-4">
-                    <img src="{{asset('images/author.webp')}}" alt="" class="rounded-full w-16">
+                    <img src="{{asset('images/users/'.$article->user->hex.'/'.$article->user->image)}}" alt="" class="rounded-full w-16 h-16">
                     <div class="text-sm">
                         <span class="font-light">By</span>
                         <span class="font-bold">
                             <a href="#" class="undlerline underline-offset-2">
-                                Frank Desoto
+                                {{$article->user->full_name()}}
                             </a>
                         </span>
                     </div>

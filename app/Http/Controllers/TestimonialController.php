@@ -70,7 +70,8 @@ class TestimonialController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'job_title' => $request->job_title,
-            'description' => $request->description,
+            'company_name' => $request->company_name,
+            'testimonial' => $request->testimonial,
             'status' => $request->status
         ]);
 

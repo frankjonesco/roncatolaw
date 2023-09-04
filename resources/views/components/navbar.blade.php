@@ -50,7 +50,16 @@
             <a href="/" id="homeBtn">Home</a>
         </li>
         <li>
-            <a href="/about">About us</a>
+            
+            <a href="#" class="dropdown" rel="submenuAbout">About us <i class="fa fa-caret-down text-right"></i></a>
+            <ul id="submenuAbout" class="submenu opacity-0 h-0 -translate-y-2/3">
+                <li class="hover:!bg-sky-100 leading-300">
+                    <a href="/about">Company</a>
+                </li>
+                <li>
+                    <a href="/">Our partners</a>
+                </li>
+            </ul>
         </li>
         <li>
             <a href="/articles">News</a>
@@ -92,7 +101,28 @@
 
 <script>
 
+let dropdown = document.querySelector('.dropdown');
 
+dropdown.addEventListener("click", function(e){
+    e.preventDefault();
+    menuItem = e.target.rel;
+    showSubMenu(menuItem);
+    this.classList.toggle('bg-yellow-50');
+    this.classList.toggle('hover:!bg-yellow-50');
+    this.classList.toggle('text-gray-900');
+    this.classList.toggle('hover:!text-gray-900');
+    this.classList.toggle('hover:!no-underline');
+    this.classList.toggle('border-b-2');
+    this.classList.toggle('border-b-gray-300');
+
+});
+
+function showSubMenu(menuItem){
+    let submenu = document.getElementById(menuItem);
+    submenu.classList.toggle('h-0');
+    submenu.classList.toggle('opacity-0');
+    submenu.classList.toggle('-translate-y-2/3');
+}
 
     
 </script>

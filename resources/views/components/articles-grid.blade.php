@@ -5,7 +5,7 @@
                 @if($article->image)
                     <div class="thumbnail" style="background-image:url('{{asset('images/articles/'.$article->hex.'/tn-'.$article->image)}}');"></div>
                 @else
-                    <div class="empty-thumbnail"></div>
+                    <div class="thumbnail bg-gray-500"></div>
                 @endif
             </a>
             @auth

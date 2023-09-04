@@ -10,7 +10,7 @@
     
     <div class="container">
         <h1>Edit this category</h1>
-        <h2>Edit the information for this category and click update.</h2>
+        <h2>Edit the information for this category and click Update.</h2>
 
         <div class="grid grid-cols-1">
             <a href="/dashboard/categories/{{$category->hex}}/images/upload" class="btn btn-dark">

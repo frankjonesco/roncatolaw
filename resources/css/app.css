@@ -21,18 +21,28 @@
         font-family: 'Roboto Slab', serif;
     }
 
+    ol li {
+        list-style: decimal;
+        list-style-position: inside;
+        @apply mb-4;
+    }
+
 
 
     /* Navbar Styles */
 
     nav .site-logo, .menu-heading{
-        @apply text-3xl;
+        @apply text-xl;
         @apply font-black;
         font-family: 'Roboto Slab', serif;
         @apply capitalize;
         @apply tracking-tighter;
         @apply my-0;
         @apply no-underline;
+    }
+
+    nav .site-logo, .menu-heading{
+        @apply text-3xl;
     }
 
     nav a{
@@ -44,6 +54,15 @@
         @apply duration-150;
         @apply ease-in;
         @apply no-underline;
+    }
+
+
+    /* Sub nav menu */ 
+
+    .submenu{
+        @apply transition-all;
+        @apply duration-150;
+        @apply ease-in;
     }
     
     
@@ -58,7 +77,7 @@
         @apply h-screen;
         @apply border-r-0;
         @apply border-r-gray-900;
-        @apply bg-sky-100;
+        @apply bg-sky-50;
         @apply z-50;
         @apply transition-all;
         @apply duration-200;

@@ -33,15 +33,21 @@ class Article extends Model
     }
 
 
+    // Relationship to topic
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
     // Relationship to category
     public function category(){
-        return $this->belongsTo(Category::class, 'categories');
+        return $this->belongsTo(Category::class);
     }
 
     // Relationship to topic
     public function topic(){
         return $this->belongsTo(Topic::class, 'topic_id');
     }
+
 
 
 

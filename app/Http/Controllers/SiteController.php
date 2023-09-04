@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon;
 use App\Models\Topic;
 use App\Models\Partner;
+use App\Models\Testimonial;
 use Illuminate\Http\Request;
 
 class SiteController extends Controller
@@ -12,8 +13,10 @@ class SiteController extends Controller
     // View homepage
     public function home(){
         $partners = Partner::orderBy('id', 'DESC')->where('status', 'public')->take(3)->get();
+        $testimonials = Testimonial::orderBy('id', 'DESC')->where('status', 'public')->take(3)->get();
         return view('home', [
-            'partners' => $partners
+            'partners' => $partners,
+            'testimonials' => $testimonials
         ]);
     }
 
