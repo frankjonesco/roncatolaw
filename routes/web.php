@@ -160,7 +160,8 @@ Route::controller(PartnerController::class)->middleware('auth')->group(function(
 // PartnerController (auth and guest)
 
 Route::controller(PartnerController::class)->group(function(){
-    
+    Route::get('partners', 'index');
+    Route::get('partners/{partner}', 'show');
 });
 
 
@@ -211,6 +212,7 @@ Route::controller(TestimonialController::class)->group(function(){
 // ContactController (auth and guest)
 Route::controller(ContactController::class)->group(function(){
     Route::get('/contact', 'index');
+    Route::post('/contact/send', 'sendMessage');
 });
 
 

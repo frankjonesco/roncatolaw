@@ -6,10 +6,10 @@
 
         <div class="mx-auto flex gap-5 justify-center mb-10">
             <div class="">
-                <a href="#" class="btn btn-dark self-end">Find out more</a>
+                <a href="/about" class="btn btn-dark self-end">Find out more</a>
             </div>
             <div class="">
-                <a href="#" class="btn btn-light">Contact us</a>
+                <a href="/contact" class="btn btn-light">Contact us</a>
             </div>
         </div>
     </x-container>
@@ -28,9 +28,12 @@
                         @else
                             <div class="bg-gradient-to-tr from-cyan-400 to-teal-200 h-full"></div>
                         @endif
-                        <div class="bg-white h-[120px] rounded-lg text-center flex flex-col justify-center mt-2">
+                        <div class="bg-white rounded-lg text-center flex flex-col justify-center mt-2">
                             <p class="text-3xl font-extrabold">{{$partner->full_name()}}</p>
                             <p class="text-xl font-extrabold text-orange-700">{{$partner->job_title}}</p>
+                            <a href="/partners/{{$partner->hex}}" class="btn btn-dark">
+                                Read more
+                            </a>
                         </div>
                     </div>
                 @endforeach

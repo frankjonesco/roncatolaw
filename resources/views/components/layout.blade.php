@@ -11,7 +11,7 @@
     @endphp
     <title>{{$meta['title']}}</title>
     <meta name="description" content="{{$meta['description']}}">
-    <meta name="author" content="TrueCrimeMetrix 2023">
+    <meta name="author" content="{{config('app.name')}}">
 
     {{-- Open graph information --}}
     <meta property="og:url" content="{{url()->current()}}" />
@@ -27,16 +27,26 @@
 
     {{-- Asset builds --}}
     @php
-        $environment = 'dev';
+        $environment = 'build';
     @endphp
     @if($environment == 'dev')
         {{-- Development scripts --}}
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @else
         {{-- Production scripts --}}
-        <link href="{{ asset('build/assets/app-7762f0f2.css') }}"  rel="preload" as="style" onload="this.rel='stylesheet'">
-        <script src="{{ asset('build/assets/app-032e7394.js') }}" defer></script>
+        <link href="{{ asset('build/assets/app-816e8c3d.css') }}"  rel="preload" as="style" onload="this.rel='stylesheet'">
+        <script src="{{ asset('build/assets/app-dbe23e4c.js') }}" defer></script>
     @endif
+
+    {{-- Google Analytics --}}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-791TLXKGDD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-791TLXKGDD');
+    </script>
 
 </head>
 

@@ -4,49 +4,63 @@
             <ul class="flex gap-2 w-min whitespace-nowrap mx-auto font-roboto">
                 <li>
                     <a href="/" class="no-underline tracking-tight">
-                        True Crime Metrix
+                        {{config('app.name')}}
                     </a>
                 </li>
                 <li>></li>
                 <li class="font-bold">
-                    <a href="#" class="no-underline tracking-tight">
-                        {{$criminal_case->title}}
+                    <a href="/partners" class="no-underline tracking-tight">
+                        Partners
                     </a>
                 </li>
                 <li>></li>
                 <li class="font-bold">
-                    <a href="#" class="no-underline tracking-tight">
-                        Topics
+                    <a href="/partners/{{$partner->hex}}" class="no-underline tracking-tight">
+                        {{$partner->full_name()}}
                     </a>
                 </li>
             </ul>
         </div>
-        <h1 class="text-center mb-8">
-            {{$criminal_case->title}}
-        </h1>
-        <h2 class="text-center mb-7 px-20">
-            Something here.
-        </h2>
-        <div class="grid grid-cols-4 gap-6 border-t p-6">
-            @foreach($criminal_case->topics as $topic)
-                <div>
-                    <div class="w-full aspect-video mb-4">
-                        @if($topic->image)
-                            <div class="w-full h-full bg-no-repeat bg-cover bg-center" style="background-image:url('{{asset('images/topics/'.$topic->hex.'/tn-'.$topic->image)}}');"></div>
-                        @else
-                            <div class="bg-gradient-to-tr from-yellow-400 to-amber-100 h-full"></div>
-                        @endif
-                    </div>
-                
-                    <div class="text-lg font-bold leading-5 tracking-tight mb-4">
-                        <a href="/topics/{{$topic->hex}}" class="no-underline px-0.5 py-0.5 block hover:bg-yellow-300 hover:text-gray-900">
-                            {{$topic->title}}
-                        </a>
-                    </div>
-                
+
+        <h1>Our partners</h1>
+
+        <div class="grid grid-cols-2">
+            <img src="{{asset('images/partners/'.$partner->hex.'/'.$partner->image)}}" alt="" title="" class="w-3/4 mx-auto mt-10">
+            <div>
+                <h1 class="text-center mb-8">
+                    {{$partner->full_name()}}
+                </h1>
+                <h2 class="text-center mb-7 px-20 text-pink-600 font-bold">
+                    {{$partner->job_title}}
+                </h2>
+
+                <h2 class="text-center mb-7 px-20">
+                    {{$partner->description}}
+                </h2>
+
+                <h1 class="text-center mb-8 mt-20">
+                    Other partners
+                </h1>
+
+                <div class="grid grid-cols-2 gap-10">
+                    @foreach ($other_partners as $partner)
+
+                        <div class="flex flex-col">
+                            <a href="/partners/{{$partner->hex}}">
+                                <div class="w-full aspect-square bg-no-repeat bg-cover bg-top bg-gray-500" style="background-image:url('{{asset('images/partners/'.$partner->hex.'/'.$partner->image)}}');"></div>
+                            </a>
+                            <h2 class="font-bold">
+                                <a href="/partners/{{$partner->hex}}" class="no-underline">
+                                    {{$partner->full_name()}}
+                                </a>
+                            </h2>
+                        </div>
+                        
+                    @endforeach
                 </div>
-        
-            @endforeach
+            </div>
         </div>
+
+        
     </div>
 </x-layout>

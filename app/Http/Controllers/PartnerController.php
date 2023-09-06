@@ -13,7 +13,7 @@ class PartnerController extends Controller
     // List public partners
     public function index(){
         $partners = Partner::orderBy('id', 'DESC')->where('status', 'public')->get();
-        return view('categories.index', [
+        return view('partners.index', [
             'partners' => $partners
         ]);
     }
